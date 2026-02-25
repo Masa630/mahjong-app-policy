@@ -1,5 +1,4 @@
 # 雀トラ！法的文書サイト / JanTora! Legal Documents
-
 ## 概要（日本語）
 
 本リポジトリは、iOSアプリ  
