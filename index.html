@@ -1,37 +1,195 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>Legal Documents</title>
-<style>
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    text-align: center;
-    padding-top: 60px;
-}
-.button {
-    display: block;
-    width: 300px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #1976D2;
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    border-radius: 10px;
-}
-.button:hover {
-    background-color: #1565C0;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JanTora! Legal</title>
+  <style>
+    :root{
+      --bg1:#f6f8ff;
+      --bg2:#f2f6ff;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --accent:#2e6eff;
+      --accent2:#00c2ff;
+      --shadow: 0 18px 40px rgba(17,24,39,.10);
+      --radius: 22px;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial,
+                   "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+      color:var(--text);
+      min-height:100vh;
+      background: radial-gradient(900px 500px at 20% 10%, #eaf1ff 0%, transparent 70%),
+                  radial-gradient(900px 500px at 80% 20%, #e6fbff 0%, transparent 70%),
+                  linear-gradient(180deg, var(--bg1), var(--bg2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 28px 18px;
+    }
+
+    .wrap{
+      width:min(920px, 100%);
+    }
+
+    .header{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom: 16px;
+      padding: 0 6px;
+    }
+    .title{
+      margin:0;
+      font-size: 28px;
+      letter-spacing: .2px;
+    }
+    .subtitle{
+      margin:6px 0 0 0;
+      color:var(--muted);
+      font-size: 14px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    a.item{
+      text-decoration:none;
+      color:inherit;
+      border:1px solid #e8edf7;
+      background: linear-gradient(180deg, #fbfcff, #f5f8ff);
+      border-radius: 18px;
+      padding: 16px 16px;
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      transition: transform .08s ease, box-shadow .12s ease, border-color .12s ease;
+      min-height: 108px;
+    }
+    a.item:hover{
+      transform: translateY(-2px);
+      border-color:#d7e2ff;
+      box-shadow: 0 14px 30px rgba(17,24,39,.10);
+    }
+    a.item:active{
+      transform: translateY(0px);
+    }
+
+    .icon{
+      width:44px;
+      height:44px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex: 0 0 auto;
+      color:white;
+      font-weight:700;
+      font-size:18px;
+    }
+
+    .label{
+      font-size: 18px;
+      font-weight: 700;
+      margin: 2px 0 6px 0;
+      line-height: 1.2;
+    }
+    .meta{
+      color:var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .footer{
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 12px;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      padding: 0 6px;
+      flex-wrap:wrap;
+    }
+
+    /* mobile */
+    @media (max-width: 620px){
+      .grid{ grid-template-columns: 1fr; }
+      .title{ font-size: 24px; }
+    }
+  </style>
 </head>
 <body>
+  <div class="wrap">
+    <div class="header">
+      <div>
+        <h1 class="title">JanTora! Legal</h1>
+        <p class="subtitle">Privacy Policy / Terms of Service</p>
+      </div>
+    </div>
 
-<a class="button" href="privacy-en.html">Privacy Policy (English)</a>
-<a class="button" href="privacy-ja.html">プライバシーポリシー</a>
-<a class="button" href="terms-en.html">Terms of Service (English)</a>
-<a class="button" href="terms-ja.html">利用規約</a>
+    <div class="card">
+      <div class="grid">
+        <a class="item" href="privacy-en.html">
+          <div class="icon">P</div>
+          <div>
+            <div class="label">Privacy Policy</div>
+            <div class="meta">English</div>
+          </div>
+        </a>
 
+        <a class="item" href="privacy-ja.html">
+          <div class="icon">プ</div>
+          <div>
+            <div class="label">プライバシーポリシー</div>
+            <div class="meta">日本語</div>
+          </div>
+        </a>
+
+        <a class="item" href="terms-en.html">
+          <div class="icon">T</div>
+          <div>
+            <div class="label">Terms of Service</div>
+            <div class="meta">English</div>
+          </div>
+        </a>
+
+        <a class="item" href="terms-ja.html">
+          <div class="icon">利</div>
+          <div>
+            <div class="label">利用規約</div>
+            <div class="meta">日本語</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>© <span id="year"></span> JanTora!</div>
+      <div>Contact: <span style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">[your-email@example.com]</span></div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
